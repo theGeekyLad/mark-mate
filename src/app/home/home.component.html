@@ -1,0 +1,48 @@
+<!-- app bar -->
+<mat-toolbar color="primary">
+    <span>Mark Mate</span>
+    <span class="spacer"></span>
+    <button class="icon-spacing" mat-icon-button (click)="newNote()">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+<!-- body -->
+<div class="body-div">
+    <!-- expansion panel containing all notes -->
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let note of notesList" [formGroup]="note">
+            <mat-expansion-panel-header>
+                <mat-panel-title (press)="note.get('allowEdits').value = !note.get('allowEdits').value">
+                    <span *ngIf="!note.get('allowEdits').value">{{note.get('file').value}}</span>
+                    <input matInput *ngIf="note.get('allowEdits').value" formControlName="file">
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- this div holds the note, toggle and buttons -->
+            <div>
+                <!-- toggle to view markdown mode -->
+                <div class="align-right">
+                    <mat-slide-toggle formControlName="showMarkdown">Markdown</mat-slide-toggle>
+                </div>
+                <!-- type in your note here -->
+                <div class="sandwiched" *ngIf="!note.get('showMarkdown').value">
+                    <mat-form-field>
+                        <textarea class="no-scroll" matInput cdkTextareaAutosize cdkAutosizeMinRows="1"
+                            formControlName="content"></textarea>
+                    </mat-form-field>
+                </div>
+                <!-- or see how it looks in md -->
+                <div *ngIf="note.get('showMarkdown').value">
+                    <markdown [data]="note.get('content').value"></markdown>
+                </div>
+            </div>
+            <!-- save changes or it'll be discarded / delete this note -->
+            <div mat-dialog-actions>
+                <div class="align-right">
+                    <button mat-button (click)="deleteNote(note.get('file').value)">Delete</button>
+                    <button mat-button
+                        (click)="saveFile(note.get('file').value, note.get('content').value)">Save</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

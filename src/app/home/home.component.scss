@@ -1,0 +1,43 @@
+.body-div {
+    padding: 1em
+}
+
+.align-right {
+    text-align: right;
+}
+
+.sandwiched {
+    margin: 1em 0 1em 0;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.icon-spacing {
+    padding: 0 14px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+::ng-deep .mat-expansion-panel-header, ::ng-deep .mat-expansion-panel {
+    background: #212121;
+}
+
+::ng-deep mat-form-field {
+    width: 100%;
+}
+
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) ::ng-deep .mat-expansion-panel-header:hover {
+    background: #212121;
+}
+
+@media (min-width: 800px) {
+    .body-div {
+        margin: 0 auto;
+        width: 50%;
+        padding: 1em;
+    }
+}

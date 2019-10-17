@@ -1,0 +1,14 @@
+<div class="login-body" [formGroup]="data">
+    <!-- username -->
+    <mat-form-field>
+        <input matInput type="text" placeholder="Username" formControlName="username">
+    </mat-form-field>
+    <!-- password -->
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password">
+    </mat-form-field>
+    <!-- login button -->
+    <div mat-dialog-actions>
+        <button mat-button (click)="setCreds();">Login</button>
+    </div>
+</div>
