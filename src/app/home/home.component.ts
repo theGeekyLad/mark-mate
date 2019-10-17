@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   markdown = 'Example!';
 
   constructor(private httpClient: HttpClient, private formBuilder: FormBuilder, private snackBar: MatSnackBar, public dialog: MatDialog) {
-    this.noteServerDomain = '122.170.5.64';
+    this.noteServerDomain = 'localhost';
     this.noteServerPort = '8000';
     this.showMarkdown = true;
     this.notesList = [];

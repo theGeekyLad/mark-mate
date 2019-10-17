@@ -30,7 +30,6 @@ const creds = {
         dir: '/home/thegeekylad/Charan'
     }
 }
-}
 ```
 _**Note:** These users have been added just for reference and must be removed. Ensure that the parent directory to a given user's directory exists, i.e. in this case `/home/thegeekylad/` exists._
 

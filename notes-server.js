@@ -8,21 +8,17 @@ const fs = require('fs');
 const app = express();
 const jsonParser = bodyParser.json()
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const serverDomain = '192.168.1.3';
+const serverDomain = 'localhost';
 
 // creds harcoded
 const creds = {
-    'tgl': {
-        password: '90828723',
-        dir: '/home/thegeekylad/HDD500G/Notes/thegeekylad/'
+    'slayer': {
+        password: 'Crazyslayer03',
+        dir: '/home/thegeekylad/Karthikay'
     },
-    'shadows': {
-        password: 'shimmy',
-        dir: '/home/thegeekylad/HDD500G/Notes/shadow_resources/'
-    },
-    'piggie': {
-        password: 'cutiepie',
-        dir: '/home/thegeekylad/HDD500G/Notes/piggie/'
+    'lazygeek': {
+        password: 'Si4s29',
+        dir: '/home/thegeekylad/Charan'
     }
 }
 
